@@ -22,6 +22,7 @@ function Rating() {
         </div>
     );
 }
+
 function Star() {
     return (
         <div>
@@ -30,16 +31,31 @@ function Star() {
     );
 }
 
-
-function Accordion() {
+function AccordionTitle() {
     return (
         <div>
             <h3>Menu</h3>
+        </div>
+    );
+}
+
+function AccordionBody() {
+    return (
+        <div>
             <ul>
                 <li>1</li>
                 <li>2</li>
                 <li>3</li>
             </ul>
+        </div>
+    );
+}
+
+function Accordion() {
+    return (
+        <div>
+            <AccordionTitle/>
+            <AccordionBody/>
         </div>
     );
 }
