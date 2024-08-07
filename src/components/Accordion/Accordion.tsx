@@ -21,7 +21,7 @@ function Accordion(props: AccordionPropsType) {
 function AccordionTitle(props: TitlePropsType) {
     return (
         <div>
-            <h3>Menu</h3>
+            <h3>{props.title}</h3>
         </div>
     );
 }
