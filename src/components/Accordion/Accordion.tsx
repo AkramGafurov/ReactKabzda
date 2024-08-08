@@ -1,7 +1,8 @@
 import React from 'react';
 
 type AccordionPropsType = {
-    accordionTitle: string
+    titleValue: string
+    collapsed: boolean
 }
 type TitlePropsType = {
     title: string
@@ -12,8 +13,8 @@ function Accordion(props: AccordionPropsType) {
 
     return (
         <div>
-            <AccordionTitle title={props.accordionTitle}/>
-            <AccordionBody/>
+            <AccordionTitle title={props.titleValue}/>
+            {props.collapsed ? '' : <AccordionBody/>}
         </div>
     );
 }

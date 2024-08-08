@@ -7,7 +7,8 @@ function App() {
     return (
         <div className="App">
             <Rating value={0}/>
-            <Accordion accordionTitle={'accordion'}/>
+            <Accordion titleValue={'accordion'} collapsed={false}/>
+            <Accordion titleValue={'accordion'} collapsed={true}/>
         </div>
     );
 }
