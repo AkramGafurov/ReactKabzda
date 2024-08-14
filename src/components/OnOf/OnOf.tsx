@@ -1,32 +1,21 @@
 import React, {useState} from "react";
 import styles from "./OnOf.module.css";
 
-// type OnOfPropsType = {
-//     isOn: boolean
-// }
+type OnOfPropsType = {
+    isOn: boolean
+    onChange: (isOn: boolean) => void
+}
 
-// export function OnOf(props: OnOfPropsType) {
-//     return (
-//         <div className={styles.container}>
-//             <div>
-//                 <button className={props.isOn ? styles.onMode : ''}>on</button>
-//                 <button className={props.isOn ? '' : styles.ofMode}>of</button>
-//             </div>
-//
-//             <div className={props.isOn ?styles.indicator + ' '+ styles.onMode : styles.indicator + ' '+ styles.indicator}></div>
-//         </div>
-//     );
-// }
-export function OnOf() {
-    const [isOn, setIsOn] = useState(false);
+export function OnOf(props: OnOfPropsType) {
     return (
         <div className={styles.container}>
             <div>
-                <button onClick={()=>setIsOn(true)} className={isOn ? styles.onMode : ''}>on</button>
-                <button onClick={()=>setIsOn(false)} className={isOn ? '' : styles.offMode}>of</button>
+                <button onClick={() => props.onChange(true)} className={props.isOn ? styles.onMode : ''}>on</button>
+                <button onClick={() => props.onChange(false)} className={props.isOn ? '' : styles.offMode}>of</button>
             </div>
 
-            <div className={isOn ?styles.indicator + ' '+ styles.onMode : styles.indicator + ' '+ styles.offMode}></div>
+            <div
+                className={props.isOn ? styles.indicator + ' ' + styles.onMode : styles.indicator + ' ' + styles.offMode}></div>
         </div>
     );
 }
