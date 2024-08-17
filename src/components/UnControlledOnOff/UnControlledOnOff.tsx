@@ -1,8 +1,8 @@
 import React, {useState} from "react";
-import styles from "./UnControlledOnOf.module.css";
+import styles from "./UnControlledOnOff.module.css";
 
 
-export function UnControlledOnOf() {
+export function UnControlledOnOff() {
     const [isOn, setIsOn] = useState(false);
     const onClick=()=>{
         setIsOn(true);
