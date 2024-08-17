@@ -1,12 +1,12 @@
 import React, {useState} from "react";
-import styles from "./OnOf.module.css";
+import styles from "./OnOff.module.css";
 
 type OnOfPropsType = {
     isOn: boolean
     onChange: (isOn: boolean) => void
 }
 
-export function OnOf(props: OnOfPropsType) {
+export function OnOff(props: OnOfPropsType) {
     return (
         <div className={styles.container}>
             <div>
