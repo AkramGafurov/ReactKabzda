@@ -57,7 +57,7 @@ export const DifficultExampleCounting = () => {
     </>
 }
 
-
+// --------------------------------- //
 const UsersSecrets = (props: { users: Array<string> }) => {
     console.log('UsersSecrets')
     return <div>
@@ -80,6 +80,9 @@ let newArray = useMemo(()=>{
     return filtredUsers;
 },[users])
 
+    let filtredUsers = users.filter(i=>i.toLowerCase().includes('a'))
+
+
     const addUser = ()=>{
         setUsers([...users, 'Sveta '+ new Date().getTime()])
     }
@@ -92,5 +95,45 @@ let newArray = useMemo(()=>{
         </button>
         {counter}
         <Users users={newArray}/>
+    </div>
+}
+
+// --------------------------------- //
+
+const BooksSecrets = (props: { books: Array<string> }) => {
+    console.log('BooksSecrets')
+    return <div>
+        {props.books.map((book,i) => <div key={i}>{book}</div>)}
+    </div>
+}
+
+const Books = React.memo(BooksSecrets)
+
+export const LikeUseCallback = () => {
+
+    console.log('LikeUseCallback')
+
+    const [counter, setCounter] = useState<number>(0)
+
+    const [books, setUsers] = useState(["react", "js", "css", "html"])
+
+let newArray = useMemo(()=>{
+    let filtredBooks = books.filter(i=>i.toLowerCase().includes('a'))
+    return filtredBooks;
+},[books])
+
+
+    const addBook = ()=>{
+        setUsers([...books, 'Angular '+ new Date().getTime()])
+    }
+    return <div>
+        <button onClick={() => {
+            setCounter(counter + 1)
+        }}>+
+        </button>
+        <button onClick={addBook}>AddUser
+        </button>
+        {counter}
+        <Books books={newArray}/>
     </div>
 }
